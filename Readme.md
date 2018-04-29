@@ -3,6 +3,8 @@ HashYeah's arsenal
 
 HashYeah web components developed independently
 
+我在重构自己的博客网站时开发的一些网页组件，帮助别人的同时希望以后有用。
+
 Title-index(Html5索引组件)
 ---
 
