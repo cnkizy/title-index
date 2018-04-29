@@ -1,4 +1,5 @@
-#Title-index(Html5索引组件)
+Title-index(Html5索引组件)
+===
 ![](https://github.com/cnkizy/title-index/blob/master/Display.png?raw=true)  
 
 一款扁平化的标题-图像-简介Html5组件。
