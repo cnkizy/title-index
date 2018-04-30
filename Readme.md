@@ -25,7 +25,7 @@ Title-index-pure
 
 ![](title-index-pure/Display.png)  
 
-一款扁平化的标题-图像-简介Html5组件。
+引言功能的组件
 
 使用场景:导航、简介
 
