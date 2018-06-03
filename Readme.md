@@ -3,30 +3,30 @@ HashYeah's arsenal
 
 HashYeah web components developed independently
 
-ÎÒÔÚÖØ¹¹×Ô¼ºµÄ²©¿ÍÍøÕ¾Ê±¿ª·¢µÄÒ»Ð©»ùÓÚHTML5µÄ×é¼þ£¬°ïÖú±ðÈËµÄÍ¬Ê±Ï£ÍûÒÔºóÓÐÓÃ¡£
+è¿™æ˜¯æˆ‘åœ¨é‡æž„è‡ªå·±çš„åšå®¢ç½‘ç«™æ—¶å¼€å‘çš„ä¸€äº›åŸºäºŽHTML5çš„ç»„ä»¶ï¼Œå¸Œæœ›èƒ½å¸®åŠ©åˆ°ä½ ã€‚
 
-Title-index(±êÌâË÷ÒýDIV×é¼þ)
+Title-index(æ ‡é¢˜ç´¢å¼•DIVç»„ä»¶)
 ---
 
 ![](title-index/Display.png)  
 
-Ò»¿î±âÆ½»¯µÄ±êÌâ-Í¼Ïñ-¼ò½éHtml5×é¼þ¡£
+ä¸€æ¬¾æ‰å¹³åŒ–çš„æ ‡é¢˜-å›¾åƒ-ç®€ä»‹Html5ç»„ä»¶ã€‚
 
-Ê¹ÓÃ³¡¾°:µ¼º½¡¢ÏÂÔØ
+ä½¿ç”¨åœºæ™¯:å¯¼èˆªã€ä¸‹è½½
 
-¸Ã×é¼þÓÐÁ½ÖÖ×´Ì¬·½°¸£º
-1.Êó±ê¾­¹ý¸Ä±ä×´Ì¬
-2.Êó±êµã»÷¸Ä±ä×´Ì¬
+è¯¥ç»„ä»¶æœ‰ä¸¤ç§çŠ¶æ€æ–¹æ¡ˆï¼š
+1.é¼ æ ‡ç»è¿‡æ”¹å˜çŠ¶æ€
+2.é¼ æ ‡ç‚¹å‡»æ”¹å˜çŠ¶æ€
 
-Ä¿Ç°ÓÐÁ½¸ö°æ±¾ Ò»¸öÔ­Éújs°æ£¬Ò»¸öVue°æ.
+ç›®å‰æœ‰ä¸¤ä¸ªç‰ˆæœ¬ ä¸€ä¸ªåŽŸç”Ÿjsç‰ˆï¼Œä¸€ä¸ªVueç‰ˆ.
 
 Title-index-pure
 ---
 
 ![](title-index-pure/Display.png)  
 
-ÒýÑÔ¹¦ÄÜµÄ×é¼þ
+å¼•è¨€åŠŸèƒ½çš„ç»„ä»¶
 
-Ê¹ÓÃ³¡¾°:µ¼º½¡¢¼ò½é
+ä½¿ç”¨åœºæ™¯:å¯¼èˆªã€ç®€ä»‹
 
-Ö÷ÌâÑÕÉ«ÒÔºóÐèÒªÔÙÀ©³ä
+ä¸»é¢˜é¢œè‰²ä»¥åŽéœ€è¦å†æ‰©å……
