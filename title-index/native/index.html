@@ -1,4 +1,4 @@
-﻿<html>
+<html>
 <head>
 
 </head>
@@ -10,6 +10,7 @@
 	width:500px;
 	height:90px;
 	margin-bottom: 10px; 
+	margin-right: 10px; 
 	padding: 15px 15px 15px 7px; 
 	line-height: 22px; 
 	border-width:1px;
@@ -19,10 +20,9 @@
 	border-radius: 0 2px 2px 0; 
 	background-color: #ffffff;
 	box-shadow: #D5D5D5 3px 3px 9px 0px;//浅灰 x轴偏移 y轴偏移 半径
-	-moz-user-select: none;				//文字不可选中
-	-khtml-user-select: none;			//文字不可选中
-	user-select: none;					//文字不可选中
 	cursor:default;						//默认鼠标
+	position:relative;
+	float:left;
 }
 /*标题索引组件 标题*/
 .ti-title{
@@ -30,8 +30,10 @@
 	clear:both;
 	font-weight:bold;
 	font-family:”微软雅黑”;
-	font-size: 14;
+	font-size: 16;
 	z-index:2;
+	margin-left:-20px;
+	cursor:default;						//默认鼠标
 }
 /*标题索引组件 内容*/
 .ti-context{
@@ -42,6 +44,7 @@
 	line-height:1.4;
 	overflow:hidden;
 	z-index:2;
+	cursor:default;						//默认鼠标
 }
 /*标题索引组件 左缩略图*/
 .ti-img{
@@ -54,13 +57,15 @@
 }
 /*标题索引组件 右上选中*/
 .ti-em-select{
-	position:absolute;
-	right:10px;
-	top:5px;
+	position:relative;
+	right:-400px;
+	top:-10px;
 	font-family:xirod;
 	font-size: 14;
 	color:#3299FF;
 	z-index:2;
+	float:left;
+	cursor:default;						//默认鼠标
 }
 /*标题索引组件 没选中 深灰*/
 .ti-noselect{
@@ -74,11 +79,11 @@
 }
 /*标题索引组件 右上角Get隐藏*/
 .dis-hide{
-	display:none;
+	visibility:hidden;
 }
 /*标题索引组件 右上角Get显示*/
 .dis-show{
-	display:;
+	visibility:none;
 }
 
 </style>
