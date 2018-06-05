@@ -1,12 +1,13 @@
-<html>
+﻿<html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.js"></script>
 </head>
 <body>
 <style>
 /*标题索引组件*/
 .title-index{
-	width:500px;
+	width:450px;
 	height:90px;
 	margin-bottom: 10px; 
 	margin-right: 10px; 
@@ -18,8 +19,8 @@
 	border-left: 7px solid #c7c7c7; 
 	border-radius: 0 2px 2px 0; 
 	background-color: #ffffff;
-	box-shadow: #D5D5D5 3px 3px 9px 0px;//浅灰 x轴偏移 y轴偏移 半径
-	cursor:default;						//默认鼠标
+	box-shadow: #D5D5D5 3px 3px 9px 0px;/*浅灰 x轴偏移 y轴偏移 半径*/
+	cursor:default;
 	position:relative;
 	float:left;
 }
@@ -32,7 +33,7 @@
 	font-size: 16;
 	z-index:2;
 	margin-left:-20px;
-	cursor:default;						//默认鼠标
+	cursor:default;
 }
 /*标题索引组件 内容*/
 .ti-context{
@@ -43,7 +44,7 @@
 	line-height:1.4;
 	overflow:hidden;
 	z-index:2;
-	cursor:default;						//默认鼠标
+	cursor:default;
 }
 /*标题索引组件 左缩略图*/
 .ti-img{
@@ -57,14 +58,14 @@
 /*标题索引组件 右上选中*/
 .ti-em-select{
 	position:relative;
-	right:-400px;
+	right:-75%;
 	top:-10px;
 	font-family:xirod;
 	font-size: 14;
 	color:#3299FF;
 	z-index:2;
 	float:left;
-	cursor:default;						//默认鼠标
+	cursor:default;
 }
 /*标题索引组件 没选中 深灰*/
 .ti-noselect{
@@ -122,7 +123,7 @@
 						this.hide = 'dis-hide';
 					}else{
 						this.noselect = '';
-						this.select = 'ti-select';
+						this.select = 'ti-select';  
 						this.hide = '';
 					}
 				}
@@ -141,7 +142,7 @@
 					this.hide = 'dis-hide';
 				}
 			}
-		}		
+		}
 	});
 
 
