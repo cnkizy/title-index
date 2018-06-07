@@ -1,6 +1,6 @@
 ﻿<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.js"></script>
 </head>
 <body>
@@ -85,28 +85,49 @@
 .dis-show{
 	visibility:none;
 }
+/*不允许选中*/
+.noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Chrome/Safari/Opera */
+	-khtml-user-select: none; /* Konqueror */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently
+	not supported by any browser */
+}
+.display1{
+	float:left;
+	width:100%;
+}
 </style>
 
 <template id="title-index">
 	 <div class="title-index" :class="[noselect,select]" @click="ti_select" @mousemove="ti_move" @mouseout="ti_moveout">
-		 <img class="ti-img" :src="img"></img>
-		 <div class="ti-title font-xirod">{{title}}</div>
+		 <img class="ti-img noselect" :src="img"></img>
+		 <div class="ti-title font-xirod noselect">{{title}}</div>
 		 <div class="ti-em-select" :class="hide">Get</div>
-		 <div class="ti-context">{{context}}</div>
+		 <div class="ti-context noselect">{{context}}</div>
 	 </div>
 </template>
 
 <div id="app">
-	<title-index type="move" img="https://git-scm.com/images/logo@2x.png" title="git工具  title-index组件-经过" context="Git是目前世界上最先进的分布式版本控制系统（没有之一）。"></title-index>	
-	<title-index type="click" img="https://cn.vuejs.org/images/logo.png" title="Vue    title-index组件-点击" context="不断繁荣的生态系统，可以在一个库和一套完整框架之间自如伸缩的渐进式 JavaScript 框架"></title-index>	
+	<div class="display1">
+		<div>单独组件</div>
+		<title-index type="move" img="https://git-scm.com/images/logo@2x.png" title="git工具  (经过改变状态)" context="Git是目前世界上最先进的分布式版本控制系统（没有之一）。"></title-index>	
+		<title-index type="click" img="https://cn.vuejs.org/images/logo.png" title="Vue    (点击改变状态)" context="不断繁荣的生态系统，可以在一个库和一套完整框架之间自如伸缩的渐进式 JavaScript 框架"></title-index>	
+	</div>
+	<div class="display1">
+		<div>子父组件交互-选中数{{clickList.length}} 分别是{{clickList}}</div>
+		<div v-for="(item,index) of dataList"><title-index type="click" :img="item.img"  :title="item.title" :context="item.context" @select="select" @noselect="no_select" :index="index"></title-index></div>
+	</div>
+	
 </div>
-
 </body>
 
 <script>
 	Vue.component('title-index',{
 		template:'#title-index',
-		props:['img','title','context','type'],
+		props:['img','title','context','type','index'],
 		data:function(){
 			return {
 				noselect:'ti-noselect',	//默认不选择状态
@@ -117,11 +138,13 @@
 		methods:{
 			ti_select:function(){
 				if(this.type == 'click'){//鼠标点击后改变状态
-					if(this.noselect==''){
+					if(this.noselect==''){			//不选中
+					this.$emit('noselect',this.index);
 						this.noselect = 'ti-noselect';
 						this.select = '';
 						this.hide = 'dis-hide';
-					}else{
+					}else{							//选中
+					this.$emit('select',this.index);
 						this.noselect = '';
 						this.select = 'ti-select';  
 						this.hide = '';
@@ -147,10 +170,32 @@
 
 
 new Vue({
-	el:'#app'
-	
+	el:'#app',
+	data:{
+		clickList:[],
+		dataList:[
+			{"title":"树莓派","img":"http://www.eeworld.com.cn/zhuanti/RaspberryPi2013/images/1.jpg","context":"世界上最小的台式机，又称卡片式电脑，外形只有信用卡大小。"},
+			{"title":"Debian","img":"https://www.debian.org/Pics/openlogo-50.png","context":"Debian GNU/Linux 是一个操作系统及自由软件的发行版,它是由一群自愿付出时间和精力的用户来维护并更新的系统。"},
+			{"title":"GitHub","img":"https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=b339f649c7fc1e17e9b284632bf99d66/0dd7912397dda1445da42dedbab7d0a20df486c4.jpg","context":"gitHub是一个面向开源及私有软件项目的托管平台，因为只支持git 作为唯一的版本库格式进行托管,故名gitHub。"}
+		]
+	},
+	methods:{
+		select:function(value){
+			this.clickList.push(value);
+		},
+		no_select:function(value){
+			this.clickList.remove(value);	
+		}
+	}
 });
 
+
+Array.prototype.remove = function(val) {
+var index = this.indexOf(val);
+	if (index > -1) {
+	this.splice(index, 1);
+	}
+};
 
 </script>
 </html>
