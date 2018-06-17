@@ -8,6 +8,7 @@ HashYeah web components developed independently
 Title-index(标题索引DIV组件)
 ---
 
+![](title-index/example_title_index.png)  
 ![](title-index/Display.png)  
 
 一款扁平化的标题-图像-简介Html5组件。
