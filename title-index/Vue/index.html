@@ -102,10 +102,10 @@
 </style>
 
 <template id="title-index">
-	 <div class="title-index" :class="[noselect,select]" @click="ti_select" @mousemove="ti_move" @mouseout="ti_moveout">
+	 <div class="title-index" :class="{'ti-select':select,'ti-noselect':!select}" @click="ti_select" @mousemove="ti_move" @mouseout="ti_moveout">
 		 <img class="ti-img noselect" :src="img"></img>
 		 <div class="ti-title font-xirod noselect">{{title}}</div>
-		 <div class="ti-em-select" :class="hide">Get</div>
+		 <div class="ti-em-select" :class="{'dis-hide':!select}">Get</div>
 		 <div class="ti-context noselect">{{context}}</div>
 	 </div>
 </template>
@@ -130,39 +130,29 @@
 		props:['img','title','context','type','index'],
 		data:function(){
 			return {
-				noselect:'ti-noselect',	//默认不选择状态
-				select:'',
-				hide:'dis-hide'
+				select:false//默认不选择状态
 			}
 		},
 		methods:{
 			ti_select:function(){
 				if(this.type == 'click'){//鼠标点击后改变状态
-					if(this.noselect==''){			//不选中
-					this.$emit('noselect',this.index);
-						this.noselect = 'ti-noselect';
-						this.select = '';
-						this.hide = 'dis-hide';
-					}else{							//选中
-					this.$emit('select',this.index);
-						this.noselect = '';
-						this.select = 'ti-select';  
-						this.hide = '';
+					if(this.select){			//选中
+						this.$emit('noselect',this.index);//触发父组件的noselect函数传值为index
+						this.select = false;				
+					}else{						//不选中
+						this.$emit('select',this.index);//触发父组件的select函数传值为index
+						this.select = true;	
 					}
 				}
 			},
 			ti_move:function(){
 				if(this.type == 'move'){//鼠标经过后改变状态
-					this.noselect = '';
-					this.select = 'ti-select';
-					this.hide = '';
+					this.select = true;
 				}
 			},
 			ti_moveout:function(){
 				if(this.type == 'move'){//鼠标经过后改变状态
-					this.noselect = 'ti-noselect';
-					this.select = '';
-					this.hide = 'dis-hide';
+					this.select = false;
 				}
 			}
 		}
