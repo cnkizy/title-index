@@ -3,7 +3,7 @@ HashYeah's arsenal
 
 HashYeah web components developed independently
 
-这是我在重构自己的博客网站时开发的一些基于HTML5的组件，希望能帮助到你。
+这是我在重构自己的博客网站时开发的一些基于Vue 2.0的HTML5的组件，希望能帮助到你。
 
 Title-index(标题索引DIV组件)
 ---
