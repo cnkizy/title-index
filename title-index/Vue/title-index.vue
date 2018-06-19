@@ -1,5 +1,5 @@
 <template id="title-index">
-	 <div class="title-index" :class="{'select':select,'ti-noselect':!select}" @click="ti_select" @mousemove="ti_move" @mouseout="ti_moveout">
+	 <div class="title-index" :class="{'ti-select':select,'ti-noselect':!select}" @click="ti_select" @mousemove="ti_move" @mouseout="ti_moveout">
 		 <img class="ti-img noselect" :src="img"></img>
 		 <div class="ti-title font-xirod noselect">{{title}}</div>
 		 <div class="ti-em-select" :class="{'dis-hide':!select}">Get</div>
